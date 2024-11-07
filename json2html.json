@@ -1,0 +1,25 @@
+export default function json2html(data) {
+    const headers = ["Name", "Age", "Gender"];
+    let html = '<table data-user="navyasribudarapu@gmail.com">';
+    
+    // Create table header
+    html += "<thead><tr>";
+    headers.forEach(header => {
+      html += `<th>${header}</th>`;
+    });
+    html += "</tr></thead>";
+    
+    // Create table body
+    html += "<tbody>";
+    data.forEach(item => {
+      html += "<tr>";
+      headers.forEach(header => {
+        html += `<td>${item[header] || ""}</td>`;
+      });
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    
+    return html;
+  }
+  
